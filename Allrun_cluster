@@ -8,7 +8,7 @@ cd "${0%/*}" || exit                                # Run from this directory
 # unset decompDict
 
 # Define the local directory where the simulation is run
-localDir='/home/meccanica/abrunelli/Train'
+localDir='/global-scratch/abrunelli/foamSimulation'
 
 #Create the results directory if it does not exist
 mkdir -p "$localDir"/simulation/results
