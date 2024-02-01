@@ -18,7 +18,7 @@ application     simpleFoam;
 
 startFrom       startTime;
 
-startTime       0s;
+startTime       0;
 
 stopAt          endTime;
 
