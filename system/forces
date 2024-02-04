@@ -42,7 +42,7 @@ binField1
 
     binData
     {
-        nBin        100;          // output data into 100 bins
+        nBin        300;          // output data into 100 bins
         direction   (1 0 0);     // bin direction
         cumulative  yes;
     }
