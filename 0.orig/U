@@ -15,7 +15,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 #include        "include/initialConditions"
-
+#include     "include/angulationParameters"
 dimensions      [0 1 -1 0 0 0 0];
 
 internalField   uniform $flowVelocity;
@@ -32,41 +32,21 @@ boundaryField
         inletValue      uniform (0 0 0);
         value           $internalField;
     }
-   // -<-<-<-<-<-<-<-< Patches created from createPatchDict >->->->->->->->->-
-
-    Back
+    upperWall
     {
-        type            noSlip;
+        type            symmetryPlane;
     }
-
-    Upper
-    {
-        type            noSlip;
-    }
-
-    Front
-    {
-        type            noSlip;
-    }
-     Lower
-    {
-        type            noSlip;
-    }
-
-    // -<-<-<-<-<-<-<-< Patches created from createPatchDict >->->->->->->->->-
-
     lowerWall
     {
-        type            fixedValue;
-        value           $internalField;
+        type            movingWallVelocity;
+        value           uniform ($x_velocity $y_velocity 0);
     }
-
     train
     {
         type            noSlip;
     }
 
-    #include "include/frontBackUpperPatches"
+    //#include "include/frontBackUpperPatches"
 }
 
 

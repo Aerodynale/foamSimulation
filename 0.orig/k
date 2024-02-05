@@ -15,7 +15,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 #include        "include/initialConditions"
-
+//#include          "include/angulationParameters"
 
 dimensions      [0 2 -2 0 0 0 0];
 
@@ -34,28 +34,11 @@ boundaryField
         inletValue      $internalField;
         value           $internalField;
     }
-    Back
+    
+    upperWall
     {
-       type            kqRWallFunction;
-        value           $internalField;
+         type            symmetryPlane;
     }
-    Front
-    {
-       type            kqRWallFunction;
-        value           $internalField;
-    }
-
-    Upper
-    {
-         type            kqRWallFunction;
-        value           $internalField;
-    }
-    Lower 
-    {
-         type            kqRWallFunction;
-        value           $internalField;
-    }
-
 
     lowerWall
     {
@@ -69,7 +52,7 @@ boundaryField
         value           $internalField;
     }
 
-    #include "include/frontBackUpperPatches"
+    //#include "include/frontBackUpperPatches"
 }
 
 
