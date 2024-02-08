@@ -15,7 +15,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 #include        "include/initialConditions"
-#include     "include/angulationParameters"
+
 dimensions      [0 1 -1 0 0 0 0];
 
 internalField   uniform $flowVelocity;
@@ -32,6 +32,14 @@ boundaryField
         inletValue      uniform (0 0 0);
         value           $internalField;
     }
+    front
+    {
+        type            symmetryPlane;
+    }
+    back
+    {
+        type            symmetryPlane;
+    }
     upperWall
     {
         type            symmetryPlane;
@@ -39,8 +47,9 @@ boundaryField
     lowerWall
     {
         type            movingWallVelocity;
-        value           uniform ($x_velocity $y_velocity 0);
+        value           uniform (20 0 0);
     }
+
     train
     {
         type            noSlip;
