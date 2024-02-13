@@ -37,35 +37,30 @@ geometry
     refinementBox
     {
         type box;
-        min  (0.5 -0.4 0);
-        max  (4.6 0.4 0.4);
+        min  (0.1 -0.15 0);
+        max  (4.5 0.15 0.4);
     }
     refinementBox2
     {
         type box;
-        min  (0.8 -0.3 0);
-        max  (4.2 0.3 0.3);
+        min  (0.25 -0.13 0);
+        max  (3.5 0.13 0.3);
     }
      refinementBox3
     {
         type box;
-        min  (0.9 -0.2 0);
-        max  (3.8 0.2 0.25);
+        min  (0.35 -0.1 0);
+        max  (2.5 0.1 0.25);
     }
     
      refinementBox4
     {
         type box;
-        min  (0.95 -0.15 0);
-        max  (3.5 0.15 0.2);
-    }
-    refinementBox5
-    {
-        type box;
-        min  (1 -0.13 0);
-        max  (3.2 0.13 0.17);
+        min  (0.6 -0.09 0);
+        max  (1.61 0.09 0.175);
     }
     
+   
 }
 
 
@@ -79,14 +74,14 @@ castellatedMeshControls
     // If local number of cells is >= maxLocalCells on any processor
     // switches from from refinement followed by balancing
     // (current method) to (weighted) balancing before refinement.
-    maxLocalCells 10000000;
+    maxLocalCells 1000000;
 
     // Overall cell limit (approximately). Refinement will stop immediately
     // upon reaching this number so a refinement level might not complete.
     // Note that this is the number of cells before removing the part which
     // is not 'visible' from the keepPoint. The final number of cells might
     // actually be a lot less.
-    maxGlobalCells 100000000;
+    maxGlobalCells 90000000;
 
     // The surface refinement loop might spend lots of iterations refining just a
     // few cells. This setting will cause refinement to stop if <= minimumRefine
@@ -189,11 +184,7 @@ castellatedMeshControls
             mode inside;
             levels ((1E15 5));
         }
-        refinementBox5
-        {
-            mode inside;
-            levels ((1E15 6));
-        }
+        
         /*
          train
         {

@@ -34,18 +34,28 @@ boundaryField
         inletValue      $internalField;
         value           $internalField;
     }
-    front
+    Back
     {
-       type            symmetryPlane;
+       type            kqRWallFunction;
+        value           $internalField;
     }
-    back
+    Front
     {
-       type            symmetryPlane;
+       type            kqRWallFunction;
+        value           $internalField;
     }
-    upperWall
+
+    Upper
     {
-         type            symmetryPlane;
+         type            kqRWallFunction;
+        value           $internalField;
     }
+    Lower 
+    {
+         type            kqRWallFunction;
+        value           $internalField;
+    }
+
 
     lowerWall
     {
@@ -59,7 +69,7 @@ boundaryField
         value           $internalField;
     }
 
-    //#include "include/frontBackUpperPatches"
+    #include "include/frontBackUpperPatches"
 }
 
 

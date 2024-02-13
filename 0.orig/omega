@@ -27,19 +27,32 @@ boundaryField
     #includeEtc "caseDicts/setConstraintTypes"
 
     #include "include/fixedInlet"
+   // -<-<-<-<-<-<-<-< Patches created from createPatchDict >->->->->->->->->-
 
-   upperWall
+    Back
     {
-        type            symmetryPlane;;
+        type            omegaWallFunction;
+        value           $internalField;
     }
-    front
+
+   Upper
     {
-        type            symmetryPlane;
+        type            omegaWallFunction;
+        value           $internalField;
     }
-    back
+
+Front
     {
-        type            symmetryPlane;
+        type            omegaWallFunction;
+        value           $internalField;
     }
+    Lower 
+    {
+        type            omegaWallFunction;
+        value           $internalField;
+    }
+    // -<-<-<-<-<-<-<-< Patches created from createPatchDict >->->->->->->->->-
+
     outlet
     {
         type            inletOutlet;
@@ -59,7 +72,7 @@ boundaryField
         value           $internalField;
     }
 
-    //#include "include/frontBackUpperPatches"
+    #include "include/frontBackUpperPatches"
 }
 
 

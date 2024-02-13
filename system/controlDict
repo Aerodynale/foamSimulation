@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         800;
+endTime         700;
 
 deltaT          1;
 
@@ -30,7 +30,7 @@ writeControl    timeStep;
 
 writeInterval   100;
 
-purgeWrite      2;
+purgeWrite      1;
 
 writeFormat     binary;
 
@@ -55,7 +55,7 @@ functions
     #include "forces"
     //#include "fieldAverage"
     //#include "yPlus"
-    #include "vorticity"
+    //#include "vorticity"
 
 }
 
